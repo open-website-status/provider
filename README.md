@@ -1,4 +1,5 @@
 # Open Website Status provider
+![npm](https://img.shields.io/npm/v/@open-website-status/provider)
 
 This is the CLI provider for Open Website Status
 
