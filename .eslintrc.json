@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "rules": {
+    "import/order": ["error"],
+    "no-console": "off"
+  }
+}
