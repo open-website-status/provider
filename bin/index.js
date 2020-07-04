@@ -44,7 +44,7 @@ sdk.on('disconnect', () => {
 });
 
 sdk.on('dispatch-job', async (job) => {
-  const url = `${job.protocol}://${job.host}${job.path}`;
+  const url = `${job.protocol}//${job.host}${job.path}`;
   console.log(`${chalk.blueBright('New job:')} ${chalk.white.underline(url)}`);
   try {
     await sdk.accept(job.id);
