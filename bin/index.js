@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 
+const updateNotifier = require('update-notifier');
 const { ProviderSDK } = require('@open-website-status/provider-sdk');
 const chalk = require('chalk');
 const { program } = require('commander');
 const got = require('got');
+const pkg = require('../package.json');
+
+updateNotifier({
+  pkg,
+  updateCheckInterval: 1000 * 60 * 60 * 8, // 8 hours
+}).notify();
 
 program
   .requiredOption('-t, --token <token>', 'Provider token')
