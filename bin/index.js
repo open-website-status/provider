@@ -51,10 +51,10 @@ sdk.on('disconnect', () => {
 });
 
 sdk.on('dispatch-job', async (job) => {
-  const url = `${job.protocol}//${job.hostname}${job.port === undefined ? '' : `:${job.port}`}${job.pathname}`;
+  const url = `${job.protocol}//${job.hostname}${job.port === undefined ? '' : `:${job.port}`}${job.pathname}${job.search}`;
   console.log(`${chalk.blueBright('New job:')} ${chalk.white.underline(url)}`);
   try {
-    await sdk.accept(job.id);
+    await sdk.accept(job.jobId);
     try {
       const response = await got(url, {
         timeout: 30000,
@@ -64,7 +64,7 @@ sdk.on('dispatch-job', async (job) => {
         throwHttpErrors: false,
       });
       try {
-        await sdk.complete(job.id, {
+        await sdk.complete(job.jobId, {
           state: 'success',
           executionTime: response.timings.phases.total,
           httpCode: response.statusCode,
@@ -77,13 +77,13 @@ sdk.on('dispatch-job', async (job) => {
     } catch (error) {
       try {
         if (error.name === 'TimeoutError') {
-          await sdk.complete(job.id, {
+          await sdk.complete(job.jobId, {
             state: 'timeout',
             executionTime: error.timings.phases.total,
           });
           console.log(chalk.yellowBright('Timeout'));
         } else {
-          await sdk.complete(job.id, {
+          await sdk.complete(job.jobId, {
             state: 'error',
             errorCode: error.code,
           });
