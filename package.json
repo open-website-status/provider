@@ -1,6 +1,6 @@
 {
   "name": "@open-website-status/provider",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI provider for Open Website Status",
   "scripts": {
     "lint": "eslint -c .eslintrc.json bin/**",
@@ -13,7 +13,7 @@
   "author": "Dominik Korsa <dominik.korsa@gmail.com> (https://github.com/dominik-korsa)",
   "license": "MIT",
   "dependencies": {
-    "@open-website-status/provider-sdk": "^1.0.4",
+    "@open-website-status/provider-sdk": "^1.0.5",
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "got": "^11.3.0",
