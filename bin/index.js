@@ -14,7 +14,7 @@ updateNotifier({
 
 program
   .requiredOption('-t, --token <token>', 'Provider token')
-  .option('-s, --server <url>', 'Server URL')
+  .requiredOption('-s, --server <url>', 'Server URL')
   .option('-p, --path <path>', 'Provider socket path');
 
 program.parse(process.argv);
