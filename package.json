@@ -3,8 +3,8 @@
   "version": "1.1.0",
   "description": "CLI provider for Open Website Status",
   "scripts": {
-    "lint": "eslint -c .eslintrc.json bin/**",
-    "lint:fix": "eslint -c .eslintrc.json bin/** --fix",
+    "lint": "eslint bin/** lib/**",
+    "lint:fix": "eslint bin/** lib/** --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it"
   },
@@ -17,7 +17,10 @@
     "@open-website-status/provider-sdk": "^1.1.0",
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
+    "configstore": "^5.0.1",
+    "dotenv": "^8.2.0",
     "got": "^11.5.1",
+    "is-url": "^1.2.4",
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
