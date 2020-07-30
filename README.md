@@ -33,11 +33,11 @@ OWS_SERVER=http://example.com:1234
 
 If you provide the setting in multiple ways (eg. as a command line parameter and as an environmental variable) the priority is the same as the order of the list above
 
-| Command argument  | Config key | Environmental variable | Description          | Required |
-|-------------------|------------|------------------------|----------------------|----------|
-| -t, --token TOKEN | token      | OWS_TOKEN              | Provider token       | **YES**  |
-| -s, --server URL  | server     | OWS_SERVER             | Backend server URL   | **YES**  |
-| -p, --path PATH   | path       | OWS_PATH               | Provider socket path | no       |
+| Command argument  | Config key | Environmental variable | Description          | Required | Default                             |
+|-------------------|------------|------------------------|----------------------|----------|-------------------------------------|
+| -t, --token TOKEN | token      | OWS_TOKEN              | Provider token       | **YES**  |                                     |
+| -s, --server URL  | server     | OWS_SERVER             | Backend server URL   | no       | https://api.open-website-status.com |
+| -p, --path PATH   | path       | OWS_PATH               | Provider socket path | no       | /provider-socket                    |
 
 ## Running as a service
 
